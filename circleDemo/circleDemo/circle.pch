@@ -1,0 +1,48 @@
+//
+//  circle.pch
+//  circleDemo
+//
+//  Created by apple on 15/9/9.
+//  Copyright (c) 2015年 cc. All rights reserved.
+//
+
+#ifndef circleDemo_circle_pch
+
+#define circleDemo_circle_pch
+
+/********************自定义输出**************************/
+#ifdef DEBUG
+
+#define CYLog(...) NSLog(__VA_ARGS__)
+
+#else
+
+#define CYLog(...)
+
+#endif
+
+#import "constant.h"
+
+#import "CYNavBaseController.h"
+
+#import <Foundation/Foundation.h>
+
+#import "CYBaseViewController.h"
+
+#import <UIKit/UIKit.h>
+
+#import "AFNetworking.h"
+
+#import "UIView+Toast.h"
+
+#import "MBProgressHUD.h"
+
+#import "UIImageView+WebCache.h"
+
+#import "MD5.h"
+
+#import "SSKeychain.h"
+
+#import "JSONModel.h"
+
+#endif
