@@ -53,6 +53,8 @@
 		01B723471B9FB70700BB55C8 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B723451B9FB70700BB55C8 /* TPKeyboardAvoidingTableView.m */; };
 		01B723831B9FC0BD00BB55C8 /* CYBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B723821B9FC0BD00BB55C8 /* CYBaseViewController.m */; };
 		01B723861B9FC57D00BB55C8 /* CYNavBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B723851B9FC57D00BB55C8 /* CYNavBaseController.m */; };
+		01D911641BA0ED4500741699 /* CYHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D911631BA0ED4500741699 /* CYHomeModel.m */; };
+		01D911671BA0F4BE00741699 /* CYFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D911661BA0F4BE00741699 /* CYFunction.m */; };
 		04A50E2C1BA015F5000DDF18 /* CYHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A50E2B1BA015F5000DDF18 /* CYHomeViewController.m */; };
 		04A50E351BA01B56000DDF18 /* CYCircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A50E341BA01B56000DDF18 /* CYCircleViewController.m */; };
 		04A50E381BA01B64000DDF18 /* CYHotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A50E371BA01B64000DDF18 /* CYHotViewController.m */; };
@@ -166,6 +168,10 @@
 		01B723821B9FC0BD00BB55C8 /* CYBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYBaseViewController.m; sourceTree = "<group>"; };
 		01B723841B9FC57D00BB55C8 /* CYNavBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYNavBaseController.h; sourceTree = "<group>"; };
 		01B723851B9FC57D00BB55C8 /* CYNavBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYNavBaseController.m; sourceTree = "<group>"; };
+		01D911621BA0ED4500741699 /* CYHomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CYHomeModel.h; path = circleDemo/model/CYHomeModel.h; sourceTree = SOURCE_ROOT; };
+		01D911631BA0ED4500741699 /* CYHomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CYHomeModel.m; path = circleDemo/model/CYHomeModel.m; sourceTree = SOURCE_ROOT; };
+		01D911651BA0F4BE00741699 /* CYFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYFunction.h; sourceTree = "<group>"; };
+		01D911661BA0F4BE00741699 /* CYFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYFunction.m; sourceTree = "<group>"; };
 		04A50E2A1BA015F5000DDF18 /* CYHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CYHomeViewController.h; path = circleDemo/CYHomeViewController.h; sourceTree = SOURCE_ROOT; };
 		04A50E2B1BA015F5000DDF18 /* CYHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CYHomeViewController.m; path = circleDemo/CYHomeViewController.m; sourceTree = SOURCE_ROOT; };
 		04A50E331BA01B56000DDF18 /* CYCircleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYCircleViewController.h; sourceTree = "<group>"; };
@@ -282,6 +288,8 @@
 			children = (
 				04A50E401BA01C93000DDF18 /* Bar */,
 				01B722CD1B9FB3F300BB55C8 /* constant.h */,
+				01D911651BA0F4BE00741699 /* CYFunction.h */,
+				01D911661BA0F4BE00741699 /* CYFunction.m */,
 				04A50E481BA02A3C000DDF18 /* CYFactory.h */,
 				04A50E491BA02A3C000DDF18 /* CYFactory.m */,
 				01B723811B9FC0BD00BB55C8 /* CYBaseViewController.h */,
@@ -489,6 +497,8 @@
 		04A50E2D1BA01B3F000DDF18 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				01D911621BA0ED4500741699 /* CYHomeModel.h */,
+				01D911631BA0ED4500741699 /* CYHomeModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -743,6 +753,7 @@
 				01B722F11B9FB6B900BB55C8 /* JSONKeyMapper.m in Sources */,
 				01B723381B9FB6F800BB55C8 /* UIImage+GIF.m in Sources */,
 				01B7232F1B9FB6F800BB55C8 /* NSData+ImageContentType.m in Sources */,
+				01D911671BA0F4BE00741699 /* CYFunction.m in Sources */,
 				01B723311B9FB6F800BB55C8 /* SDWebImageCompat.m in Sources */,
 				04A50E3F1BA01C6C000DDF18 /* CYTabBarViewController.m in Sources */,
 				01B722F01B9FB6B900BB55C8 /* JSONModel+networking.m in Sources */,
@@ -764,6 +775,7 @@
 				01B723861B9FC57D00BB55C8 /* CYNavBaseController.m in Sources */,
 				01B723341B9FB6F800BB55C8 /* SDWebImageDownloaderOperation.m in Sources */,
 				01B722A31B9FA64100BB55C8 /* main.m in Sources */,
+				01D911641BA0ED4500741699 /* CYHomeModel.m in Sources */,
 				04A50E431BA01CAF000DDF18 /* CYTabView.m in Sources */,
 				01B7233A1B9FB6F800BB55C8 /* UIImageView+HighlightedWebCache.m in Sources */,
 				01B7230B1B9FB6F300BB55C8 /* RatingBar.m in Sources */,
