@@ -7,6 +7,13 @@
 //
 
 #import "AppDelegate.h"
+#import "CYHomeViewController.h"
+#import "CYTabBarViewController.h"
+#import "CYShakeViewController.h"
+#import "CYXmppViewController.h"
+#import "CYToolsViewController.h"
+#import "CYCircleViewController.h"
+#import "CYHotViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +24,26 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    self.tab = [[CYTabBarViewController alloc] init];
+    
+    CYHomeViewController *home = [sb instantiateViewControllerWithIdentifier:@"CYHomeViewController"];
+    UINavigationController *homeNav = [[UINavigationController alloc] initWithRootViewController:home];
+    
+    CYHotViewController *hot = [sb instantiateViewControllerWithIdentifier:@"CYHotViewController"];
+    UINavigationController *hotNav = [[UINavigationController alloc] initWithRootViewController:hot];
+    
+    CYCircleViewController *circle = [sb instantiateViewControllerWithIdentifier:@"CYCircleViewController"];
+    UINavigationController *circleNav = [[UINavigationController alloc] initWithRootViewController:circle];
+    
+    CYToolsViewController *tools = [sb instantiateViewControllerWithIdentifier:@"CYToolsViewController"];
+    UINavigationController *toolsNav= [[UINavigationController alloc] initWithRootViewController:tools];
+    
+    self.tab.viewControllers = @[homeNav,hotNav,circleNav,toolsNav];
+    
+    self.window.rootViewController = self.tab;
+    
     return YES;
 }
 

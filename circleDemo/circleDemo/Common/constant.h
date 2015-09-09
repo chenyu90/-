@@ -13,5 +13,8 @@
 #define kUIScreenSize [UIScreen mainScreen].bounds.size
 
 #define kUINavHeight 64
+#define kUINavBarHeight 44
+
+#define kUITabBarHeight 49
 
 #endif

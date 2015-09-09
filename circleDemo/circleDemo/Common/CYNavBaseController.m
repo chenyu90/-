@@ -23,16 +23,48 @@
     [self.view addSubview:self.navView];
     
     self.leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.leftBtn.frame = CGRectMake(0, 20, 44, 44);
+    self.leftBtn.frame = CGRectMake(0, 20, kUINavBarHeight, kUINavBarHeight);
+    [self.leftBtn setBackgroundImage:[UIImage imageNamed:@"nav_back"] forState:UIControlStateNormal];
     [self.leftBtn addTarget:self action:@selector(backMethod) forControlEvents:UIControlEventTouchUpInside];
-    
     [self.navView addSubview:self.leftBtn];
     
     self.rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.rightBtn.frame = CGRectMake(kUIScreenSize.width-60, 20, 44, 44);
+    
     [self.rightBtn addTarget:self action:@selector(showLoginMethod) forControlEvents:UIControlEventTouchUpInside];
     [self.navView addSubview:self.rightBtn];
+    
+    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    self.titleLabel.font = [UIFont systemFontOfSize:20];
+    self.titleLabel.textColor = [UIColor whiteColor];
+    self.titleLabel.textAlignment = NSTextAlignmentCenter;
+    self.titleLabel.text = @"首页";
+    [self.navView addSubview:self.titleLabel];
+    
+    
+    
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    CGSize size = [self.titleLabel.text boundingRectWithSize:CGSizeZero options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:20]} context:nil].size;
+    
+    self.titleLabel.frame = CGRectMake((kUIScreenSize.width - size.width)*0.5, 30, size.width, size.height);
+    
+    if (NO) {
+        self.rightBtn.frame = CGRectMake(kUIScreenSize.width-kUINavBarHeight, 20, kUINavBarHeight, kUINavBarHeight);
+        [self.rightBtn setBackgroundImage:[UIImage imageNamed:@"nav_user"] forState:UIControlStateNormal];
+    }else{
+        [self.rightBtn setTitle:@"登录/注册" forState:UIControlStateNormal];
+        
+        self.rightBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+        self.rightBtn.frame = CGRectMake(kUIScreenSize.width-kUINavBarHeight*2, 20, kUINavBarHeight*2, kUINavBarHeight);
+        [self.rightBtn setBackgroundImage:nil forState:UIControlStateNormal];
+    }
+    
+}
+
 
 - (void)backMethod
 {

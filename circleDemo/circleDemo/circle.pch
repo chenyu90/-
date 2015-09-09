@@ -21,6 +21,10 @@
 
 #endif
 
+#import "CYFactory.h"
+
+#import "CYTabBarViewController.h"
+
 #import "constant.h"
 
 #import "CYNavBaseController.h"

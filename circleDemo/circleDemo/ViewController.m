@@ -19,13 +19,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    
+//    self.titleLabel.text = @"青岛生活圈";
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    [self showErrorMessage:@"加载失败"];
-}
+//- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+//{
+//    [self showErrorMessage:@"加载失败"];
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

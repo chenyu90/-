@@ -10,6 +10,8 @@
 
 @interface CYBaseViewController ()
 
+@property (nonatomic,strong) MBProgressHUD *HUD;
+
 @end
 
 @implementation CYBaseViewController
@@ -22,6 +24,12 @@
 - (void)showLoadingView
 {
     CYLog(@"showLoadingView");
+    
+    _HUD = [[MBProgressHUD alloc] initWithView:self.view];
+    
+    [_HUD show:YES];
+    
+    [self.view addSubview:_HUD];
     
 }
 
