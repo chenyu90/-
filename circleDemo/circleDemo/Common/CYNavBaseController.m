@@ -40,7 +40,7 @@
     self.titleLabel.text = @"首页";
     [self.navView addSubview:self.titleLabel];
     
-    
+    self.navigationController.navigationBarHidden = YES;
     
 }
 

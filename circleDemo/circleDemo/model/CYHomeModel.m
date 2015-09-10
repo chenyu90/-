@@ -10,7 +10,37 @@
 
 @implementation CYHomeModel
 
+@end
+
+@implementation FamousListModel
+
+@end
+
+@implementation FamousModel
 
 
+@end
+
+@implementation FocusListModel
+
+@end
+
+@implementation FocusModel
+
+@end
+
+@implementation GroupListModel
+
+@end
+
+@implementation GroupModel
+
+@end
+
+@implementation GuessListModel
+
+@end
+
+@implementation GuessModel
 
 @end

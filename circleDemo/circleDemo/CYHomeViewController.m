@@ -7,6 +7,7 @@
 //
 
 #import "CYHomeViewController.h"
+#import "CYHomeModel.h"
 
 #define APP_ID @"1001"
 #define APP_KEY @"5bV9JhaMn2GJ5MZe"
@@ -14,6 +15,8 @@
 @interface CYHomeViewController ()
 
 @property (nonatomic,strong) AFHTTPSessionManager *manager;
+
+@property (nonatomic,strong) CYHomeModel *homeModel;
 
 @end
 
@@ -24,7 +27,11 @@
     // Do any additional setup after loading the view.
     self.titleLabel.text = @"首页";
     
-    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:nil]];
+//    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:@"http://www.qd-life.com/"]];
+//    
+//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    
+    CYHttpClient *manager = [CYHttpClient shareInstance];
     
     NSMutableDictionary *paramet = [NSMutableDictionary dictionary];
     
@@ -44,12 +51,17 @@
     
     [paramet setObject:sign forKey:@"sign"];
     
-    [manager GET:@"http://www.qd-life.com/?anu=api/1/index/get_index_info" parameters:paramet success:^ void(NSURLSessionDataTask * data, id response) {
+    [manager GET:@"?anu=api/1/index/get_index_info" parameters:paramet success:^ void(NSURLSessionDataTask * data, id response) {
         
-        CYLog(@"%@",data);
+        CYLog(@"%@",response);
+        
+        _homeModel = [[CYHomeModel alloc] initWithDictionary:response error:nil];
+        FocusListModel *listModel = _homeModel.focus;
+
         
     } failure:^ void(NSURLSessionDataTask * task, NSError * error) {
         
+        CYLog(@"%@",error);
     }];
     
 }

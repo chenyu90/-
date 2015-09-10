@@ -21,6 +21,8 @@
 
 #endif
 
+#import "CYHttpClient.h"
+
 #import "CYFunction.h"
 
 #import "CYFactory.h"

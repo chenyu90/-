@@ -55,6 +55,7 @@
 		01B723861B9FC57D00BB55C8 /* CYNavBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B723851B9FC57D00BB55C8 /* CYNavBaseController.m */; };
 		01D911641BA0ED4500741699 /* CYHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D911631BA0ED4500741699 /* CYHomeModel.m */; };
 		01D911671BA0F4BE00741699 /* CYFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D911661BA0F4BE00741699 /* CYFunction.m */; };
+		01D9116A1BA103AD00741699 /* CYHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D911691BA103AD00741699 /* CYHttpClient.m */; };
 		04A50E2C1BA015F5000DDF18 /* CYHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A50E2B1BA015F5000DDF18 /* CYHomeViewController.m */; };
 		04A50E351BA01B56000DDF18 /* CYCircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A50E341BA01B56000DDF18 /* CYCircleViewController.m */; };
 		04A50E381BA01B64000DDF18 /* CYHotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A50E371BA01B64000DDF18 /* CYHotViewController.m */; };
@@ -172,6 +173,8 @@
 		01D911631BA0ED4500741699 /* CYHomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CYHomeModel.m; path = circleDemo/model/CYHomeModel.m; sourceTree = SOURCE_ROOT; };
 		01D911651BA0F4BE00741699 /* CYFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYFunction.h; sourceTree = "<group>"; };
 		01D911661BA0F4BE00741699 /* CYFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYFunction.m; sourceTree = "<group>"; };
+		01D911681BA103AD00741699 /* CYHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYHttpClient.h; sourceTree = "<group>"; };
+		01D911691BA103AD00741699 /* CYHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYHttpClient.m; sourceTree = "<group>"; };
 		04A50E2A1BA015F5000DDF18 /* CYHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CYHomeViewController.h; path = circleDemo/CYHomeViewController.h; sourceTree = SOURCE_ROOT; };
 		04A50E2B1BA015F5000DDF18 /* CYHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CYHomeViewController.m; path = circleDemo/CYHomeViewController.m; sourceTree = SOURCE_ROOT; };
 		04A50E331BA01B56000DDF18 /* CYCircleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYCircleViewController.h; sourceTree = "<group>"; };
@@ -298,6 +301,8 @@
 				01B723851B9FC57D00BB55C8 /* CYNavBaseController.m */,
 				04A50E3D1BA01C6C000DDF18 /* CYTabBarViewController.h */,
 				04A50E3E1BA01C6C000DDF18 /* CYTabBarViewController.m */,
+				01D911681BA103AD00741699 /* CYHttpClient.h */,
+				01D911691BA103AD00741699 /* CYHttpClient.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -743,6 +748,7 @@
 				04A50E2C1BA015F5000DDF18 /* CYHomeViewController.m in Sources */,
 				01B723321B9FB6F800BB55C8 /* SDWebImageDecoder.m in Sources */,
 				01B723401B9FB70100BB55C8 /* UIView+Toast.m in Sources */,
+				01D9116A1BA103AD00741699 /* CYHttpClient.m in Sources */,
 				01B722A91B9FA64100BB55C8 /* ViewController.m in Sources */,
 				04A50E381BA01B64000DDF18 /* CYHotViewController.m in Sources */,
 				01B722E91B9FB6B900BB55C8 /* JSONModel.m in Sources */,
