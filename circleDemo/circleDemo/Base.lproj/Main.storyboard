@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -51,8 +52,26 @@
                     <view key="view" contentMode="scaleToFill" id="qoV-4E-4PT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r1Y-65-cMf">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="gad-hN-5WM" id="uaS-Kc-d04"/>
+                                </connections>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="r1Y-65-cMf" secondAttribute="trailing" id="7ga-Sy-NNf"/>
+                            <constraint firstItem="r1Y-65-cMf" firstAttribute="top" secondItem="qoV-4E-4PT" secondAttribute="top" id="9Ar-Ln-y9U"/>
+                            <constraint firstItem="r1Y-65-cMf" firstAttribute="leading" secondItem="qoV-4E-4PT" secondAttribute="leading" id="LBj-tR-uKb"/>
+                            <constraint firstItem="0Iv-Ic-tLC" firstAttribute="top" secondItem="r1Y-65-cMf" secondAttribute="bottom" id="n5g-OQ-Lef"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="r1Y-65-cMf" id="3th-o0-9BH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sxt-Kw-MY1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -69,8 +88,35 @@
                     <view key="view" contentMode="scaleToFill" id="Gfl-m2-ncQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fmZ-pF-amm">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NLJ-Jc-Fft">
+                                    <size key="itemSize" width="68" height="63"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BVf-PQ-9pO" id="6AL-kn-xEk"/>
+                                    <outlet property="delegate" destination="BVf-PQ-9pO" id="fYe-Va-mXu"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fmZ-pF-amm" firstAttribute="top" secondItem="Gfl-m2-ncQ" secondAttribute="top" constant="64" id="4dc-XZ-Btu"/>
+                            <constraint firstItem="fmZ-pF-amm" firstAttribute="leading" secondItem="Gfl-m2-ncQ" secondAttribute="leading" id="IUQ-Xh-y6C"/>
+                            <constraint firstAttribute="trailing" secondItem="fmZ-pF-amm" secondAttribute="trailing" id="Tjv-fr-68q"/>
+                            <constraint firstItem="jk3-uk-yoV" firstAttribute="top" secondItem="fmZ-pF-amm" secondAttribute="bottom" id="Xh3-GI-SpW"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="clollectionView" destination="fmZ-pF-amm" id="6bM-Nr-nKI"/>
+                        <outlet property="flowLayout" destination="NLJ-Jc-Fft" id="pwG-2P-9XC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S2r-nw-XVr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -111,6 +157,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ibs-Sn-OBO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="901" y="-315"/>
+        </scene>
+        <!--News View Controller-->
+        <scene sceneID="NJy-bf-ZIv">
+            <objects>
+                <viewController storyboardIdentifier="CYNewsViewController" id="BGa-ri-buC" customClass="CYNewsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5A7-ne-se6"/>
+                        <viewControllerLayoutGuide type="bottom" id="j0h-4I-sua"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="azg-Uk-5sq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TWu-b0-YSY">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BGa-ri-buC" id="CQ3-Wv-Zmn"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TWu-b0-YSY" firstAttribute="top" secondItem="azg-Uk-5sq" secondAttribute="topMargin" constant="64" id="NVE-3T-xDQ"/>
+                            <constraint firstAttribute="trailing" secondItem="TWu-b0-YSY" secondAttribute="trailing" id="aVd-SW-PRq"/>
+                            <constraint firstItem="j0h-4I-sua" firstAttribute="top" secondItem="TWu-b0-YSY" secondAttribute="bottom" id="e8r-a5-vyj"/>
+                            <constraint firstItem="TWu-b0-YSY" firstAttribute="leading" secondItem="azg-Uk-5sq" secondAttribute="leading" id="k40-7j-ccj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="TWu-b0-YSY" id="RpS-OR-fhv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cq6-4j-TO7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1137" y="-674"/>
         </scene>
         <!--Xmpp View Controller-->
         <scene sceneID="26L-RS-4Am">

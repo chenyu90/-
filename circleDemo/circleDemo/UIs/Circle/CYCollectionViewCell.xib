@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CYCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="69" height="95"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="69" height="95"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwC-g2-6wh">
+                        <rect key="frame" x="8" y="63" width="50" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sZR-XX-tg2">
+                        <rect key="frame" x="8" y="8" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="Eht-g7-MyC"/>
+                            <constraint firstAttribute="height" constant="50" id="wkd-eZ-Hbn"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="sZR-XX-tg2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="31Q-b8-h2X"/>
+                <constraint firstItem="uwC-g2-6wh" firstAttribute="trailing" secondItem="sZR-XX-tg2" secondAttribute="trailing" id="79R-QJ-zOa"/>
+                <constraint firstItem="uwC-g2-6wh" firstAttribute="top" secondItem="sZR-XX-tg2" secondAttribute="bottom" constant="5" id="8rB-2F-u74"/>
+                <constraint firstItem="sZR-XX-tg2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="cMR-Hh-XAp"/>
+                <constraint firstItem="uwC-g2-6wh" firstAttribute="leading" secondItem="sZR-XX-tg2" secondAttribute="leading" id="yRK-cZ-HEm"/>
+            </constraints>
+            <size key="customSize" width="69" height="95"/>
+            <connections>
+                <outlet property="iconImage" destination="sZR-XX-tg2" id="x8P-Ns-Nw7"/>
+                <outlet property="nameLabel" destination="uwC-g2-6wh" id="6M9-P7-TEq"/>
+            </connections>
+            <point key="canvasLocation" x="373.5" y="266.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

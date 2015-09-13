@@ -76,6 +76,15 @@
     CYLog(@"showLoginMethod");
 }
 
+- (void)hiddenNavView:(BOOL)isHidden
+{
+    if (isHidden) {
+        self.navView.hidden = YES;
+    }else{
+        self.navView.hidden = NO;
+    }
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

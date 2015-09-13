@@ -10,4 +10,6 @@
 
 @interface CYTabBarViewController : UITabBarController
 
+- (void)pushHidden:(BOOL)isHidden;
+
 @end

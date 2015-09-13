@@ -7,8 +7,10 @@
 //
 
 #import "CYHotViewController.h"
+#import "CYNewsViewController.h"
 
-@interface CYHotViewController ()
+@interface CYHotViewController ()<UIWebViewDelegate>
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end
 
@@ -18,21 +20,46 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.titleLabel.text = @"新闻";
+    NSURL *url = [NSURL URLWithString:@"http://www.qd-life.com/news&src=webview"];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    [self.webView loadRequest:request];
+    
+    self.webView.scalesPageToFit = YES;
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - 
+
+-(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+    
+    if ([request.URL.absoluteString isEqualToString:@"about:black"]) {
+        return NO;
+    }else if ([request.URL.absoluteString isEqualToString:@"http://www.qd-life.com/news&src=webview"]){
+        return YES;
+    }else{
+        
+        // 跳转新闻页面
+        CYNewsViewController *newsVc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"CYNewsViewController"];
+        
+        newsVc.urlStr = request.URL.absoluteString;
+        
+        CYLog(@"%@",request.URL.absoluteString);
+        [self.navigationController pushViewController:newsVc animated:YES];
+        // 隐藏tabBar
+        AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
+        
+        [app.tab pushHidden:NO];
+        
+        // YES:跳转到系统的网页
+        return NO;
+    }
+    
+    return YES;
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

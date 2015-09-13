@@ -23,4 +23,22 @@
     return client;
 }
 
+
++ (void)CYGET:(NSString *)url paramter:(NSDictionary *)param SuccessBlock:(successBlock)successBlock failedBlock:(failedBlcok)failedBlock errorBlock:(errorBlock)errorBlock
+{
+    [[self shareInstance] GET:url parameters:param success:^ void(NSURLSessionDataTask * task, id response) {
+       
+        if ([response[@"status"] isEqualToString:@"success"]) {
+            
+            successBlock(response);
+        }
+        
+        
+    } failure:^ void(NSURLSessionDataTask * task, NSError * error) {
+        
+    }];
+    
+}
+
+
 @end

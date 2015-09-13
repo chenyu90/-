@@ -24,6 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tabBar.hidden = YES;
+    
     // 自定义tabBarView和popView
     _tabBarView = [[CYTabView alloc] initWithFrame:CGRectMake(0, kUIScreenSize.height-kUITabBarHeight, kUIScreenSize.width, kUITabBarHeight)];
     
@@ -42,6 +44,17 @@
     
     
     
+}
+
+- (void)pushHidden:(BOOL)isHidden
+{
+    if (isHidden) {
+        self.popView.hidden = YES;
+        self.tabBarView.hidden = YES;
+    }else
+    {
+        self.tabBarView.hidden = NO;
+    }
 }
 
 //- (void)changeVc:(UIButton *)item

@@ -9,8 +9,7 @@
 #import "CYHomeViewController.h"
 #import "CYHomeModel.h"
 
-#define APP_ID @"1001"
-#define APP_KEY @"5bV9JhaMn2GJ5MZe"
+
 
 @interface CYHomeViewController ()
 
@@ -61,7 +60,7 @@
         
     } failure:^ void(NSURLSessionDataTask * task, NSError * error) {
         
-        CYLog(@"%@",error);
+        CYLog(@"error = %@",error);
     }];
     
 }

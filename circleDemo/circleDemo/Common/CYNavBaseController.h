@@ -23,4 +23,6 @@
 
 - (void)showLoginMethod;
 
+- (void)hiddenNavView:(BOOL)isHidden;
+
 @end

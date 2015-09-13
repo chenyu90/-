@@ -17,4 +17,7 @@
 
 #define kUITabBarHeight 49
 
+#define APP_ID @"1001"
+#define APP_KEY @"5bV9JhaMn2GJ5MZe"
+
 #endif
